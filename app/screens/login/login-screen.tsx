@@ -13,94 +13,97 @@ import Icon from 'react-native-vector-icons/AntDesign';
 type LoginProps = {};
 export const LoginScreen: React.FunctionComponent<LoginProps> = () => {
   return (
-    <ImageBackground
-      style={{
-        width: '100%',
-        height: '100%',
-      }}
-      source={images.signInBG}>
-      <View
+    <View style={styles.container}>
+      <ImageBackground
         style={{
-          alignItems: 'center',
+          width: '100%',
           height: '100%',
-        }}>
+        }}
+        source={images.signInBG}>
         <View
           style={{
-            paddingTop: '15%',
+            alignItems: 'center',
+            height: '100%',
           }}>
-          <Text style={styles.title}>Login</Text>
           <View
-            style={[
-              styles.textInput,
-              {
-                marginBottom: 18,
-              },
-            ]}>
-            <Icon name="user" size={16} color="#D9D9D9" />
-            <TextInput placeholder="Email" style={styles.input} />
+            style={{
+              paddingTop: '20%',
+              flex: 1,
+            }}>
+            <Text style={styles.title}>Login</Text>
+            <View
+              style={[
+                styles.textInput,
+                {
+                  marginBottom: 18,
+                },
+              ]}>
+              <Icon name="user" size={16} color="#D9D9D9" />
+              <TextInput placeholder="Email" style={styles.input} />
+            </View>
+            <View style={styles.textInput}>
+              <Icon name="lock" size={16} color="#D9D9D9" />
+              <TextInput
+                placeholder="Password"
+                style={styles.input}
+                secureTextEntry
+              />
+            </View>
+            <View style={{marginTop: 48}}>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.textBtn}>Login</Text>
+              </TouchableOpacity>
+            </View>
+            <Text style={styles.forgot}>Forgot your password?</Text>
           </View>
-          <View style={styles.textInput}>
-            <Icon name="lock" size={16} color="#D9D9D9" />
-            <TextInput
-              placeholder="Password"
-              style={styles.input}
-              secureTextEntry
-            />
-          </View>
-          <View style={{marginTop: 48}}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={styles.textBtn}>Login</Text>
-            </TouchableOpacity>
-          </View>
-          <Text style={styles.forgot}>Forgot your password?</Text>
-        </View>
 
-        <View style={styles.section}>
-          <Text style={styles.textConnect}>or connect with</Text>
-          <View style={styles.social}>
-            <TouchableOpacity
+          <View style={styles.section}>
+            <Text style={styles.textConnect}>or connect with</Text>
+            <View style={styles.social}>
+              <TouchableOpacity
+                style={[
+                  styles.btnSocial,
+                  {
+                    backgroundColor: '#35A6EF',
+                  },
+                ]}>
+                <Icon name="facebook-square" size={16} color="#ffffff" />
+                <Text style={styles.textSocial}>Facebook</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[
+                  styles.btnSocial,
+                  {
+                    backgroundColor: '#5073B5',
+                  },
+                ]}>
+                <Icon name="twitter" size={16} color="#ffffff" />
+                <Text style={styles.textSocial}>Twitter</Text>
+              </TouchableOpacity>
+            </View>
+            <Text
               style={[
-                styles.btnSocial,
+                styles.textConnect,
                 {
-                  backgroundColor: '#35A6EF',
+                  marginTop: 55,
                 },
               ]}>
-              <Icon name="facebook-square" size={16} color="#ffffff" />
-              <Text style={styles.textSocial}>Facebook</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.btnSocial,
-                {
-                  backgroundColor: '#5073B5',
-                },
-              ]}>
-              <Icon name="twitter" size={16} color="#ffffff" />
-              <Text style={styles.textSocial}>Twitter</Text>
-            </TouchableOpacity>
+              Dont' have account?{'    '}
+              <Text style={{color: '#6A74CF'}}>Sign up</Text>
+            </Text>
           </View>
-          <Text
-            style={[
-              styles.textConnect,
-              {
-                marginTop: 55,
-              },
-            ]}>
-            Dont' have account?{'    '}
-            <Text style={{color: '#6A74CF'}}>Sign up</Text>
-          </Text>
         </View>
-      </View>
-    </ImageBackground>
+      </ImageBackground>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
   section: {
-    marginTop: 50,
-    height: '100%',
+    paddingTop: '50%',
     alignItems: 'center',
-    paddingTop: '15%',
+    justifyContent: 'center',
+    flex: 1,
   },
   container: {
     flex: 1,
