@@ -1,12 +1,14 @@
 import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {SetUpLock} from './app/screens/lock';
 import {LoginScreen} from './app/screens/login';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
-      <LoginScreen />
+      {/* <LoginScreen /> */}
+      <SetUpLock />
     </SafeAreaView>
   );
 };
